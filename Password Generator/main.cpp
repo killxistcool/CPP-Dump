@@ -8,10 +8,10 @@
 // This program generates you a random password, based on four criteria: Animal, Food, Vehicle and Number
 // Ce programme génère un mot de passe aléatoire basé sur quatre critères : un animal, un aliment, un véhicule et un nombre.
 
-std::mt19937& get_rng()
+std::mt19937& getRandom()
 {
-    static std::random_device rd{};
-    static std::mt19937 gen(rd());
+    static std::random_device random{};
+    static std::mt19937 gen(random());
 
     return gen;
 }
@@ -33,7 +33,7 @@ std::string getAnimal(std::string language)
     {
         std::vector<std::string> animals{"KuH", "SchWeIN", "AfFe", "BuLlE", "GAnS", "MaUs", "SEemOeWe", "PfErD", "GIraffe"};
         std::string choice{};
-        std::sample(animals.begin(), animals.end(), &choice, 1, get_rng());
+        std::sample(animals.begin(), animals.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -41,7 +41,7 @@ std::string getAnimal(std::string language)
     {
         std::vector<std::string> animals{"cOW", "PIG", "MOnkEy", "bUlL", "GOoSe", "MoUSe", "SEaGUll", "HORsE", "GiRAfFe"};
         std::string choice{};
-        std::sample(animals.begin(), animals.end(), &choice, 1, get_rng());
+        std::sample(animals.begin(), animals.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -49,7 +49,7 @@ std::string getAnimal(std::string language)
     {
         std::vector<std::string> animals{"VOicHe", "CoCHoN", "TAuREaU", "OIe", "soURiS", "mouEtTe", "cHeVAl", "GiRAfE"};
         std::string choice{};
-        std::sample(animals.begin(), animals.end(), &choice, 1, get_rng());
+        std::sample(animals.begin(), animals.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -61,7 +61,7 @@ std::string getFood(std::string language)
     {
         std::vector<std::string> foods{"toRTe", "KUcHen", "dONuT", "CuPCakE", "MufFiN", "NUDelN", "SaNDWhiCh", "EiS", "JoGhUrT"};
         std::string choice{};
-        std::sample(foods.begin(), foods.end(), &choice, 1, get_rng());
+        std::sample(foods.begin(), foods.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -69,7 +69,7 @@ std::string getFood(std::string language)
     {
         std::vector<std::string> foods{"pIE", "caKE", "doNuT", "cUPCaKe", "MuFFin", "paStA", "SaNdWhicH", "iCe", "YoGHUrt"};
         std::string choice{};
-        std::sample(foods.begin(), foods.end(), &choice, 1, get_rng());
+        std::sample(foods.begin(), foods.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -77,7 +77,7 @@ std::string getFood(std::string language)
     {
         std::vector<std::string> foods{"TARte", "GatEAu", "BeiGnEt", "cUpCaKE", "muFfIn", "pAtEs", "sAnDWhIch", "GLaCe", "YAOurT"};
         std::string choice{};
-        std::sample(foods.begin(), foods.end(), &choice, 1, get_rng());
+        std::sample(foods.begin(), foods.end(), &choice, 1, getRandom());
         return choice;
     }
 }
@@ -88,7 +88,7 @@ std::string getVehicle(std::string language)
     {
         std::vector<std::string> vehicles{"AuTo", "rakEtE", "fLugZeuG", "buS", "faHrrAd", "zUG"};
         std::string choice{};
-        std::sample(vehicles.begin(), vehicles.end(), &choice, 1, get_rng());
+        std::sample(vehicles.begin(), vehicles.end(), &choice, 1, getRandom());
         return choice;
     }
 
@@ -96,7 +96,7 @@ std::string getVehicle(std::string language)
     {
     std::vector<std::string> vehicles{"cAR", "RocKeT", "AirPlaNe", "BUs", "BycIcLe", "trAin"};
     std::string choice{};
-    std::sample(vehicles.begin(), vehicles.end(), &choice, 1, get_rng());
+    std::sample(vehicles.begin(), vehicles.end(), &choice, 1, getRandom());
     return choice;
     }
 
@@ -104,14 +104,14 @@ std::string getVehicle(std::string language)
     {
         std::vector<std::string> vehicles{"VoItuRE", "fuSeE", "aVIOn", "BUs", "veLO", "TrAin"};
         std::string choice{};
-        std::sample(vehicles.begin(), vehicles.end(), &choice, 1, get_rng());
+        std::sample(vehicles.begin(), vehicles.end(), &choice, 1, getRandom());
         return choice;
     }
 }
 
 int generateRandomNumber()
 {
-    return get_rng()() % 101;
+    return getRandom()() % 101;
 }
 
 void printResult(std::string animal, std::string food, std::string vehicle, int number, std::string language)
