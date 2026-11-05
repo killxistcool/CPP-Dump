@@ -4,7 +4,7 @@
 // converts Celsius to Fahrenheit
 void doConversion()
 {
-    std::cout << "Enter a temperate to convert to Celsius: ";
+    std::cout << "Enter a temperature in Celsius to convert into Fahrenheit: ";
     double celsius{};
     std::cin >> celsius;
 
