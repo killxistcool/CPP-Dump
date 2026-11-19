@@ -59,7 +59,7 @@ std::string getFood(std::string language)
 {
     if (language == "German")
     {
-        std::vector<std::string> foods{"toRTe", "KUcHen", "dONuT", "CuPCakE", "MufFiN", "NUDelN", "SaNDWhiCh", "EiS", "JoGhUrT"};
+        std::vector<std::string> foods{"toRTe", "KUcHen", "dONuT", "CuPCakE", "MufFiN", "NUDelN", "bRoETChEn", "EiS", "JoGhUrT"};
         std::string choice{};
         std::sample(foods.begin(), foods.end(), &choice, 1, getRandom());
         return choice;
